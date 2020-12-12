@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class TappyBirdGameManager : MonoBehaviour
 {
@@ -18,6 +20,7 @@ public class TappyBirdGameManager : MonoBehaviour
     public Text highScoreText;
 
     private int score = 0;
+    private int gameoverCount;
     private bool isGameover = true;
 
     public int Score { get => score; }
@@ -83,9 +86,13 @@ public class TappyBirdGameManager : MonoBehaviour
     // activated when replay button is pressed
     public void GameOverConfirmedMethod()
     {
-        OnGameoverConfirmedEvent();  // event sent to TapController
-        scoreText.text = "0"; // reset score
-        SetPageState(PageState.Start); // show up start page
+        if (gameoverCount < 3)
+        {
+            OnGameoverConfirmedEvent();  // event sent to TapController
+            scoreText.text = "0"; // reset score
+            SetPageState(PageState.Start); // show up start page
+        }
+        else { SceneManager.LoadScene("RestartScene"); gameoverCount++; }
     }
 
     private void SetPageState(PageState pg)
