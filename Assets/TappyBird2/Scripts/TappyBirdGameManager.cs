@@ -20,7 +20,7 @@ public class TappyBirdGameManager : MonoBehaviour
     public Text highScoreText;
 
     private int score = 0;
-    private int gameoverCount;
+    private int gameoverCount = 0;
     private bool isGameover = true;
 
     public int Score { get => score; }
@@ -42,8 +42,11 @@ public class TappyBirdGameManager : MonoBehaviour
 
     void Awake()
     {
-        if (Instance != null) Destroy(gameObject);
-        else { Instance = this; DontDestroyOnLoad(gameObject); }
+        // bug: singleton
+        // if (Instance != null) Destroy(gameObject);
+        // else { Instance = this; DontDestroyOnLoad(gameObject); }
+
+        Instance = this; // TODO remove after fixing singleton bug 
     }
 
     private void Start()
@@ -56,7 +59,7 @@ public class TappyBirdGameManager : MonoBehaviour
     // show up countdown page and execute counter (OnEnable)
     public void StartGame() => SetPageState(PageState.Countdown);
 
-    public void ShowHighScore() => highScoreText.text = "HighScore " + PlayerPrefs.GetInt("HighScore");
+    public void ShowHighScore() => highScoreText.text = "HighScore: " + PlayerPrefs.GetInt("HighScore");
 
     public void ResetHighScore() { PlayerPrefs.DeleteKey("HighScore"); ShowHighScore(); }
 
@@ -86,13 +89,15 @@ public class TappyBirdGameManager : MonoBehaviour
     // activated when replay button is pressed
     public void GameOverConfirmedMethod()
     {
+        gameoverCount++;
         if (gameoverCount < 3)
         {
             OnGameoverConfirmedEvent();  // event sent to TapController
             scoreText.text = "0"; // reset score
             SetPageState(PageState.Start); // show up start page
         }
-        else { SceneManager.LoadScene("RestartScene"); gameoverCount++; }
+        else { SceneManager.LoadScene("RestartScene"); }
+
     }
 
     private void SetPageState(PageState pg)

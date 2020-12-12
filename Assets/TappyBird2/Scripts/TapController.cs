@@ -66,6 +66,15 @@ public class TapController : MonoBehaviour
     {
         rb.velocity = Vector2.zero;
         rb.simulated = true;
+
+        // TODO move here
+        // bug dfldjf
+        // fixme dafsdfl
+
+        // * fdfaslkd
+        // fixme adfjals
+        // bug dfjalsd
+
     }
 
     private void OnGameOverConfirmedMethod()
