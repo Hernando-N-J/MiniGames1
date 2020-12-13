@@ -43,40 +43,23 @@ public class Parallaxer : MonoBehaviour
     private TappyBirdGameManager gm;
     private PoolObject[] poolObjectsArray; // array of pool objects needed
 
-    private void Awake()
-    {
-        // on gameoverconfirmed, objects will be respawned
+    private void Awake() => Configure(); // on gameoverconfirmed, objects will be respawned
 
-        Configure();
-    }
 
-    private void OnEnable()
-    {
-        TappyBirdGameManager.OnGameoverConfirmedEvent += OnGameOverConfirmedMethod;
-    }
 
-    private void OnDisable()
-    {
-        TappyBirdGameManager.OnGameoverConfirmedEvent -= OnGameOverConfirmedMethod;
-    }
+    private void OnEnable() => TappyBirdGameManager.OnGameoverConfirmedEvent += OnGameOverConfirmedMethod;
 
-    private void Start()
-    {
-        gm = TappyBirdGameManager.Instance;
-    }
+    private void OnDisable() => TappyBirdGameManager.OnGameoverConfirmedEvent -= OnGameOverConfirmedMethod;
+
+    private void Start() => gm = TappyBirdGameManager.instance;
 
     private void Update()
     {
         if (gm.IsGameover) return;
 
-        Shift();
-        spawnTimer += Time.deltaTime;
+        Shift(); spawnTimer += Time.deltaTime;
 
-        if (spawnTimer > spawnRate)
-        {
-            Spawn();
-            spawnTimer = 0;
-        }
+        if (spawnTimer > spawnRate) { Spawn(); spawnTimer = 0; }
     }
 
     private void Configure()

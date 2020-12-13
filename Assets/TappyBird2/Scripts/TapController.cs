@@ -34,7 +34,7 @@ public class TapController : MonoBehaviour
     }
     private void Start()
     {
-        gm = TappyBirdGameManager.Instance;
+        gm = TappyBirdGameManager.instance;
 
         rb = GetComponent<Rigidbody2D>();
         rb.simulated = false;
@@ -62,20 +62,7 @@ public class TapController : MonoBehaviour
 
     }
 
-    private void OnGameStartedMethod()
-    {
-        rb.velocity = Vector2.zero;
-        rb.simulated = true;
-
-        // TODO move here
-        // bug dfldjf
-        // fixme dafsdfl
-
-        // * fdfaslkd
-        // fixme adfjals
-        // bug dfjalsd
-
-    }
+    private void OnGameStartedMethod() { rb.velocity = Vector2.zero; rb.simulated = true; }
 
     private void OnGameOverConfirmedMethod()
     {

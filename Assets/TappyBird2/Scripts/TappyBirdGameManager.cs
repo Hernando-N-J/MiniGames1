@@ -11,7 +11,7 @@ public class TappyBirdGameManager : MonoBehaviour
     public static event GameDelegate OnGameStartedEvent;
     public static event GameDelegate OnGameoverConfirmedEvent;
 
-    public static TappyBirdGameManager Instance;
+    public static TappyBirdGameManager instance;
 
     public GameObject startPage;
     public GameObject gameoverPage;
@@ -20,10 +20,11 @@ public class TappyBirdGameManager : MonoBehaviour
     public Text highScoreText;
 
     private int score = 0;
-    private int gameoverCount = 0;
     private bool isGameover = true;
+    private static int gameoverCount = 0;
 
     public int Score { get => score; }
+    public int GameoverCount { get => gameoverCount; }
     public bool IsGameover { get => isGameover; }
 
     private void OnEnable()
@@ -40,20 +41,12 @@ public class TappyBirdGameManager : MonoBehaviour
         TapController.OnPlayerDied -= OnPlayerDiedMethod;
     }
 
-    void Awake()
-    {
-        // bug: singleton
-        // if (Instance != null) Destroy(gameObject);
-        // else { Instance = this; DontDestroyOnLoad(gameObject); }
+    void Awake() => instance = this; // TODO remove after fixing singleton bug
+    // FIXME: singleton
+    // if (Instance != null) Destroy(gameObject);
+    // else { Instance = this; DontDestroyOnLoad(gameObject); }
 
-        Instance = this; // TODO remove after fixing singleton bug 
-    }
-
-    private void Start()
-    {
-        SetPageState(PageState.Start);
-        ShowHighScore();
-    }
+    private void Start() { SetPageState(PageState.Start); ShowHighScore(); }
 
     // activated when play button is pressed
     // show up countdown page and execute counter (OnEnable)
@@ -90,13 +83,13 @@ public class TappyBirdGameManager : MonoBehaviour
     public void GameOverConfirmedMethod()
     {
         gameoverCount++;
-        if (gameoverCount < 3)
+        if (GameoverCount < 3)
         {
             OnGameoverConfirmedEvent();  // event sent to TapController
             scoreText.text = "0"; // reset score
             SetPageState(PageState.Start); // show up start page
         }
-        else { SceneManager.LoadScene("RestartScene"); }
+        else { SceneManager.LoadScene("RestartScene"); gameoverCount = 0; } // needed for Lives script
 
     }
 

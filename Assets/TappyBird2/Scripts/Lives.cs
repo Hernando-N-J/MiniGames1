@@ -1,18 +1,19 @@
+using System.Dynamic;
 using UnityEngine;
 
 public class Lives : MonoBehaviour
 {
-   [S] 
-public GameObject[] lives;
-private int livesCounter=1;
+    [SerializeField] public GameObject[] lives;
+    private int livesCount = 3;
 
-private void Start() {
-    
-    for (int i = 0; i < lives.length; i++)
+    private void Start() => TappyBirdGameManager.OnGameoverConfirmedEvent += LivesChecker;
+
+    private void LivesChecker()
     {
-        if(livesCounter<3) gameObject[i-lives].SetActive(false);
-
+        livesCount--;
+        lives[livesCount].SetActive(false);
     }
-}
+
+    private void OnDestroy() => TappyBirdGameManager.OnGameoverConfirmedEvent -= LivesChecker;
 
 }
