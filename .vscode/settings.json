@@ -1,4 +1,4 @@
-﻿{
+{
     "files.exclude":
     {
         "**/.DS_Store":true,
@@ -54,12 +54,16 @@
         "Temp/":true
     },
     "cSpell.ignoreWords": [
+        "amount",
         "behaviour",
         "bird",
+        "chicken",
+        "chik",
         "game",
         "manager",
         "mono",
         "parallaxer",
+        "spawnner",
         "tappy"
     ],
     "cSpell.words": [
