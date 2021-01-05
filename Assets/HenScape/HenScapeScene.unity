@@ -486,8 +486,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6988584e2821604481bbfd25c391208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 1363381264}
-  score: 0
 --- !u!4 &220602550
 Transform:
   m_ObjectHideFlags: 0
@@ -1877,8 +1875,8 @@ GameObject:
   - component: {fileID: 1348283760}
   - component: {fileID: 1348283759}
   - component: {fileID: 1348283758}
-  - component: {fileID: 1348283762}
   - component: {fileID: 1348283763}
+  - component: {fileID: 1348283762}
   m_Layer: 0
   m_Name: Hen
   m_TagString: Player
@@ -1974,6 +1972,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSp: 15
+  scoreText: {fileID: 1363381264}
+  score: 0
 --- !u!54 &1348283763
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2648,23 +2648,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ab19e805b2f01f4087987b14c524bc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerValidCheckpoint:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 220602549}
-        m_MethodName: IncreaseScore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  myEvent2:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!4 &1799741217
 Transform:
   m_ObjectHideFlags: 0
