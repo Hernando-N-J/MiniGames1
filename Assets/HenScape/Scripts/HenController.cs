@@ -3,12 +3,15 @@
 public class HenController : MonoBehaviour
 {
     // TODO modify script with command pattern when animations are available
-    private float moveSp = 5f;
+    [SerializeField] private float moveSp = 5f;
 
-    void Update()
-    {
-        InputMov();
+    private void Start() 
+    { 
+
     }
+   
+
+    void Update() { InputMov(); }
 
     public void InputMov()
     {

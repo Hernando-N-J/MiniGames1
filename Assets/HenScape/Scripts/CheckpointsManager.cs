@@ -26,10 +26,6 @@ public class CheckpointsManager : MonoBehaviour
         for (int i = 0; i < checkpoints.Length; i++)
             numbersList1.Add(i);
 
-        // *** print numbersList1 values, just for checking them out...
-        // foreach (int num in numbersList1)
-        // Debug.Log("numberslist1: " + num);
-
         // *for loop used to add numbers to numbersList2 and checkout values
         // numbersList2 keeps the valid checkpoints values
         // if the random value is repeated (if it's already contained in numbersList2)
@@ -38,10 +34,7 @@ public class CheckpointsManager : MonoBehaviour
         int n = 4; // number of valid (desired) checkpoints
         for (int i = 0; i < n;) // i++ is applied only if the number is not repeated
         {
-            int randNum = Random.Range(0, numbersList1.Count);
-
-            // just for checking in console
-            Debug.Log("choosen number: " + randNum);
+            int randNum = Random.Range(0, numbersList1.Count); // just for checking in console ... Debug.Log("choosen number: " + randNum);
 
             if (!numbersList2.Contains(randNum)) // if the list2 doesn't contain the randNum
             {
@@ -52,12 +45,8 @@ public class CheckpointsManager : MonoBehaviour
             else // if the number is repeated
                 Debug.Log("number " + randNum + "is already included in numbersList2");
 
-            // just for checking out in console
-            Debug.Log("n2 list count: " + numbersList2.Count);
-
-            // just for checking out in console
-            foreach (int num in numbersList2)
-                Debug.Log("+++ numbers in numberslist2: " + num);
+            // just for checking out in console ... Debug.Log("n2 list count: " + numbersList2.Count);
+            // just for checking out in console ... foreach (int num in numbersList2)  Debug.Log("+++ numbers in numberslist2: " + num);
 
         }
     }
