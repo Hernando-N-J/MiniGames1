@@ -106,21 +106,21 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
-    agentHeight: 2
-    agentSlope: 45
+    agentRadius: 0.14
+    agentHeight: 0.5
+    agentSlope: 18
     agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.046666667
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 84574ef3d8a0c0340bbd092fba1df44c, type: 2}
 --- !u!1001 &37892164
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -213,6 +213,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7397754757840759056, guid: 1aa387e47dc7ebd4cb54fb1aea44467a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7397754757840759068, guid: 1aa387e47dc7ebd4cb54fb1aea44467a,
         type: 3}
       propertyPath: m_RootOrder
@@ -276,6 +281,66 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 57453638}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &101227546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 101227548}
+  - component: {fileID: 101227547}
+  m_Layer: 0
+  m_Name: NavMesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &101227547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101227546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 23800000, guid: 9a933345d0eb08b4288e5189f70d7d6a, type: 2}
+--- !u!4 &101227548
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101227546}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &127691751
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,7 +350,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 127691752}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Obstacles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -385,6 +450,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7569636519039483132, guid: 3a3e50bc65c098a459aae9f33375ab93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a3e50bc65c098a459aae9f33375ab93, type: 3}
 --- !u!4 &168175249 stripped
@@ -402,7 +472,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 190389273}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -423,9 +493,8 @@ Transform:
   - {fileID: 1237287062}
   - {fileID: 127691752}
   - {fileID: 1474455390}
-  - {fileID: 1494930888}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &216103705
 GameObject:
@@ -510,7 +579,7 @@ GameObject:
   m_Component:
   - component: {fileID: 261571360}
   - component: {fileID: 261571359}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: InvisibleWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -894,6 +963,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 7397754757840759056, guid: 1aa387e47dc7ebd4cb54fb1aea44467a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7397754757840759068, guid: 1aa387e47dc7ebd4cb54fb1aea44467a,
         type: 3}
       propertyPath: m_RootOrder
@@ -1024,6 +1098,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 7569636519039483132, guid: 3a3e50bc65c098a459aae9f33375ab93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a3e50bc65c098a459aae9f33375ab93, type: 3}
 --- !u!4 &647590951 stripped
@@ -1124,6 +1203,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 7397754757840759056, guid: 1aa387e47dc7ebd4cb54fb1aea44467a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7397754757840759068, guid: 1aa387e47dc7ebd4cb54fb1aea44467a,
         type: 3}
       propertyPath: m_RootOrder
@@ -1197,7 +1281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 806534430}
   - component: {fileID: 806534429}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: InvisibleWall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1381,6 +1465,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7569636519039483132, guid: 3a3e50bc65c098a459aae9f33375ab93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a3e50bc65c098a459aae9f33375ab93, type: 3}
 --- !u!4 &959511941 stripped
@@ -1481,6 +1570,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5641707560196700070, guid: b8534d1496284174d8ec34710212d817,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5641707560196700074, guid: b8534d1496284174d8ec34710212d817,
         type: 3}
       propertyPath: m_RootOrder
@@ -1555,6 +1649,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Obstacle (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641707560196700070, guid: b8534d1496284174d8ec34710212d817,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5641707560196700074, guid: b8534d1496284174d8ec34710212d817,
         type: 3}
@@ -1631,7 +1730,7 @@ GameObject:
   - component: {fileID: 1237287061}
   - component: {fileID: 1237287060}
   - component: {fileID: 1237287059}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1725,6 +1824,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 7397754757840759056, guid: 1aa387e47dc7ebd4cb54fb1aea44467a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7397754757840759068, guid: 1aa387e47dc7ebd4cb54fb1aea44467a,
         type: 3}
       propertyPath: m_RootOrder
@@ -1799,6 +1903,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Obstacle (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641707560196700070, guid: b8534d1496284174d8ec34710212d817,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5641707560196700074, guid: b8534d1496284174d8ec34710212d817,
         type: 3}
@@ -2108,7 +2217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1430930187}
   - component: {fileID: 1430930186}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: InvisibleWall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2151,7 +2260,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1474455390}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: InvisibleWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2214,8 +2323,8 @@ Transform:
   - {fileID: 1088714170}
   - {fileID: 1590582410}
   - {fileID: 1510286730}
-  m_Father: {fileID: 190389273}
-  m_RootOrder: 3
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1494930889
 MonoBehaviour:
@@ -2320,6 +2429,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Obstacle (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7397754757840759056, guid: 1aa387e47dc7ebd4cb54fb1aea44467a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7397754757840759068, guid: 1aa387e47dc7ebd4cb54fb1aea44467a,
         type: 3}
@@ -2531,6 +2645,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7569636519039483132, guid: 3a3e50bc65c098a459aae9f33375ab93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a3e50bc65c098a459aae9f33375ab93, type: 3}
 --- !u!4 &1628056786 stripped
@@ -2672,7 +2791,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1845077493}
   - component: {fileID: 1845077492}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: InvisibleWall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
