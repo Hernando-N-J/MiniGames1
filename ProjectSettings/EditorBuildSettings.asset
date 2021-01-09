@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/TappyBird2/Scenes/TappyBirdScene.unity
-    guid: 0036437b6747935409d0eef166405147
-  - enabled: 1
-    path: Assets/TappyBird2/Scenes/RestartScene.unity
-    guid: 2ddf92ece7c469d41b2ba7fbc0c607dc
+    path: Assets/AndroidTouchpad/Scenes/Touchpad-1.0.unity
+    guid: 6598713b97accf849afde7127a4d0a06
   m_configObjects: {}
