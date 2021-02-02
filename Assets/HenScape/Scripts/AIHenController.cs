@@ -1,8 +1,38 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
-public class HenController : MonoBehaviour
+public class AIHenController : MonoBehaviour
 {
+	//public GameObject checkpoint;
+	//NavMeshAgent agent;
+	//Animator anim;
+
+
+	//// Use this for initialization
+	//void Start()
+	//{
+	//	checkpoint = GameObject.FindWithTag("Player");
+	//	agent = this.GetComponent<NavMeshAgent>();
+	//	anim = this.GetComponent<Animator>();
+	//}
+
+	//// Update is called once per frame
+	//void Update()
+	//{
+	//	agent.SetDestination(checkpoint.transform.position);
+	//	if (agent.remainingDistance < 2)
+	//	{
+	//		anim.SetBool("isMoving", false);
+
+	//	}
+	//	else
+	//	{
+	//		anim.SetBool("isMoving", true);
+	//	}
+
+	//}
+
     // TODO modify script with command pattern when animations are available
     [SerializeField] private float moveSp = 5f;
     [SerializeField] public Text scoreText;
@@ -16,7 +46,7 @@ public class HenController : MonoBehaviour
     {
         score++;
         scoreText.text = score.ToString();
-       
+
         if (score == 4)
         {
             scoreText.text = "YOU WIN!!!";
@@ -42,3 +72,5 @@ public class HenController : MonoBehaviour
         }
     }
 }
+
+
